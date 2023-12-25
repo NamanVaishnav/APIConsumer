@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct APIConsumerApp: App {
+    
+    @StateObject var appVM = AppViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainListView()
         }
+        .environmentObject(appVM)
     }
 }

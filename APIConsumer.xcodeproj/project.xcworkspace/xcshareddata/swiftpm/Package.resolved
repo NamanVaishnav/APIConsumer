@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "apilayer-spm",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/NamanVaishnav/APILayer-SPM",
+      "state" : {
+        "branch" : "main",
+        "revision" : "eac44e009b9f847c8953b5c42ffa689b180ac217"
+      }
+    }
+  ],
+  "version" : 2
+}

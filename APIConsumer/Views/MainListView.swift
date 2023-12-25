@@ -6,8 +6,13 @@
 //
 
 import SwiftUI
+import TenttsAPI
 
-struct ContentView: View {
+struct MainListView: View {
+    
+    @EnvironmentObject var appVM:  AppViewModel
+    @StateObject var quotesVM = QuotesViewModel()
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -20,5 +25,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    MainListView()
 }

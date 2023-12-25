@@ -8,18 +8,39 @@
 
 /* Begin PBXBuildFile section */
 		10F52AEA2B39434300DB26D0 /* APIConsumerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F52AE92B39434300DB26D0 /* APIConsumerApp.swift */; };
-		10F52AEC2B39434300DB26D0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F52AEB2B39434300DB26D0 /* ContentView.swift */; };
+		10F52AEC2B39434300DB26D0 /* MainListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F52AEB2B39434300DB26D0 /* MainListView.swift */; };
 		10F52AEE2B39434400DB26D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10F52AED2B39434400DB26D0 /* Assets.xcassets */; };
 		10F52AF22B39434400DB26D0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10F52AF12B39434400DB26D0 /* Preview Assets.xcassets */; };
+		10F52AFA2B39441600DB26D0 /* TenttsAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 10F52AF92B39441600DB26D0 /* TenttsAPI */; };
+		10F52AFD2B39449900DB26D0 /* TickerListRowData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F52AFC2B39449900DB26D0 /* TickerListRowData.swift */; };
+		10F52B022B39453E00DB26D0 /* TickerListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F52B012B39453E00DB26D0 /* TickerListRowView.swift */; };
+		10F52B052B3955A200DB26D0 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F52B042B3955A200DB26D0 /* EmptyStateView.swift */; };
+		10F52B072B39563000DB26D0 /* ErrorStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F52B062B39563000DB26D0 /* ErrorStateView.swift */; };
+		10F52B092B39576B00DB26D0 /* LoadingStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F52B082B39576B00DB26D0 /* LoadingStateView.swift */; };
+		10F52B0C2B3957C800DB26D0 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F52B0B2B3957C800DB26D0 /* AppViewModel.swift */; };
+		10F52B0F2B39588000DB26D0 /* Stubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F52B0E2B39588000DB26D0 /* Stubs.swift */; };
+		10F52B112B395A6300DB26D0 /* QuotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F52B102B395A6300DB26D0 /* QuotesViewModel.swift */; };
+		10F52B132B395AA900DB26D0 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F52B122B395AA900DB26D0 /* Utils.swift */; };
+		10F52B162B395B9800DB26D0 /* Quote+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F52B152B395B9800DB26D0 /* Quote+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		10F52AE62B39434300DB26D0 /* APIConsumer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APIConsumer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10F52AE92B39434300DB26D0 /* APIConsumerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConsumerApp.swift; sourceTree = "<group>"; };
-		10F52AEB2B39434300DB26D0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		10F52AEB2B39434300DB26D0 /* MainListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListView.swift; sourceTree = "<group>"; };
 		10F52AED2B39434400DB26D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10F52AEF2B39434400DB26D0 /* APIConsumer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = APIConsumer.entitlements; sourceTree = "<group>"; };
 		10F52AF12B39434400DB26D0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		10F52AFC2B39449900DB26D0 /* TickerListRowData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerListRowData.swift; sourceTree = "<group>"; };
+		10F52B012B39453E00DB26D0 /* TickerListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerListRowView.swift; sourceTree = "<group>"; };
+		10F52B042B3955A200DB26D0 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		10F52B062B39563000DB26D0 /* ErrorStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorStateView.swift; sourceTree = "<group>"; };
+		10F52B082B39576B00DB26D0 /* LoadingStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingStateView.swift; sourceTree = "<group>"; };
+		10F52B0B2B3957C800DB26D0 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
+		10F52B0E2B39588000DB26D0 /* Stubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stubs.swift; sourceTree = "<group>"; };
+		10F52B102B395A6300DB26D0 /* QuotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesViewModel.swift; sourceTree = "<group>"; };
+		10F52B122B395AA900DB26D0 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		10F52B152B395B9800DB26D0 /* Quote+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Quote+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10F52AFA2B39441600DB26D0 /* TenttsAPI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,10 +75,15 @@
 			isa = PBXGroup;
 			children = (
 				10F52AE92B39434300DB26D0 /* APIConsumerApp.swift */,
-				10F52AEB2B39434300DB26D0 /* ContentView.swift */,
+				10F52B142B395B8300DB26D0 /* Extensions */,
+				10F52B0A2B3957B000DB26D0 /* ViewModels */,
+				10F52AFE2B39451500DB26D0 /* Views */,
+				10F52AFB2B39448300DB26D0 /* Model */,
+				10F52B0D2B39582100DB26D0 /* Mocks&Stubs */,
 				10F52AED2B39434400DB26D0 /* Assets.xcassets */,
 				10F52AEF2B39434400DB26D0 /* APIConsumer.entitlements */,
 				10F52AF02B39434400DB26D0 /* Preview Content */,
+				10F52B122B395AA900DB26D0 /* Utils.swift */,
 			);
 			path = APIConsumer;
 			sourceTree = "<group>";
@@ -67,6 +94,59 @@
 				10F52AF12B39434400DB26D0 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		10F52AFB2B39448300DB26D0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				10F52AFC2B39449900DB26D0 /* TickerListRowData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		10F52AFE2B39451500DB26D0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				10F52B032B39559600DB26D0 /* Common */,
+				10F52AEB2B39434300DB26D0 /* MainListView.swift */,
+				10F52B012B39453E00DB26D0 /* TickerListRowView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		10F52B032B39559600DB26D0 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				10F52B042B3955A200DB26D0 /* EmptyStateView.swift */,
+				10F52B062B39563000DB26D0 /* ErrorStateView.swift */,
+				10F52B082B39576B00DB26D0 /* LoadingStateView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		10F52B0A2B3957B000DB26D0 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				10F52B0B2B3957C800DB26D0 /* AppViewModel.swift */,
+				10F52B102B395A6300DB26D0 /* QuotesViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		10F52B0D2B39582100DB26D0 /* Mocks&Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				10F52B0E2B39588000DB26D0 /* Stubs.swift */,
+			);
+			path = "Mocks&Stubs";
+			sourceTree = "<group>";
+		};
+		10F52B142B395B8300DB26D0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				10F52B152B395B9800DB26D0 /* Quote+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +165,9 @@
 			dependencies = (
 			);
 			name = APIConsumer;
+			packageProductDependencies = (
+				10F52AF92B39441600DB26D0 /* TenttsAPI */,
+			);
 			productName = APIConsumer;
 			productReference = 10F52AE62B39434300DB26D0 /* APIConsumer.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +196,9 @@
 				Base,
 			);
 			mainGroup = 10F52ADD2B39434300DB26D0;
+			packageReferences = (
+				10F52AF82B39441600DB26D0 /* XCRemoteSwiftPackageReference "APILayer-SPM" */,
+			);
 			productRefGroup = 10F52AE72B39434300DB26D0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,8 +225,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10F52AEC2B39434300DB26D0 /* ContentView.swift in Sources */,
+				10F52B0F2B39588000DB26D0 /* Stubs.swift in Sources */,
+				10F52B092B39576B00DB26D0 /* LoadingStateView.swift in Sources */,
+				10F52AEC2B39434300DB26D0 /* MainListView.swift in Sources */,
+				10F52B112B395A6300DB26D0 /* QuotesViewModel.swift in Sources */,
+				10F52B0C2B3957C800DB26D0 /* AppViewModel.swift in Sources */,
 				10F52AEA2B39434300DB26D0 /* APIConsumerApp.swift in Sources */,
+				10F52B052B3955A200DB26D0 /* EmptyStateView.swift in Sources */,
+				10F52B132B395AA900DB26D0 /* Utils.swift in Sources */,
+				10F52B072B39563000DB26D0 /* ErrorStateView.swift in Sources */,
+				10F52AFD2B39449900DB26D0 /* TickerListRowData.swift in Sources */,
+				10F52B162B395B9800DB26D0 /* Quote+Extensions.swift in Sources */,
+				10F52B022B39453E00DB26D0 /* TickerListRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +455,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		10F52AF82B39441600DB26D0 /* XCRemoteSwiftPackageReference "APILayer-SPM" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/NamanVaishnav/APILayer-SPM";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		10F52AF92B39441600DB26D0 /* TenttsAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 10F52AF82B39441600DB26D0 /* XCRemoteSwiftPackageReference "APILayer-SPM" */;
+			productName = TenttsAPI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 10F52ADE2B39434300DB26D0 /* Project object */;
 }
