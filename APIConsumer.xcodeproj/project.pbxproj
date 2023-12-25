@@ -22,6 +22,9 @@
 		10F52B112B395A6300DB26D0 /* QuotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F52B102B395A6300DB26D0 /* QuotesViewModel.swift */; };
 		10F52B132B395AA900DB26D0 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F52B122B395AA900DB26D0 /* Utils.swift */; };
 		10F52B162B395B9800DB26D0 /* Quote+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F52B152B395B9800DB26D0 /* Quote+Extensions.swift */; };
+		10F52B182B39C41600DB26D0 /* FetchPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F52B172B39C41600DB26D0 /* FetchPhase.swift */; };
+		10F52B1A2B39C49900DB26D0 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F52B192B39C49900DB26D0 /* SearchViewModel.swift */; };
+		10F52B1C2B39C56E00DB26D0 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F52B1B2B39C56E00DB26D0 /* SearchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +44,9 @@
 		10F52B102B395A6300DB26D0 /* QuotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesViewModel.swift; sourceTree = "<group>"; };
 		10F52B122B395AA900DB26D0 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		10F52B152B395B9800DB26D0 /* Quote+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Quote+Extensions.swift"; sourceTree = "<group>"; };
+		10F52B172B39C41600DB26D0 /* FetchPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPhase.swift; sourceTree = "<group>"; };
+		10F52B192B39C49900DB26D0 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		10F52B1B2B39C56E00DB26D0 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				10F52AFC2B39449900DB26D0 /* TickerListRowData.swift */,
+				10F52B172B39C41600DB26D0 /* FetchPhase.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -110,6 +117,7 @@
 				10F52B032B39559600DB26D0 /* Common */,
 				10F52AEB2B39434300DB26D0 /* MainListView.swift */,
 				10F52B012B39453E00DB26D0 /* TickerListRowView.swift */,
+				10F52B1B2B39C56E00DB26D0 /* SearchView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -129,6 +137,7 @@
 			children = (
 				10F52B0B2B3957C800DB26D0 /* AppViewModel.swift */,
 				10F52B102B395A6300DB26D0 /* QuotesViewModel.swift */,
+				10F52B192B39C49900DB26D0 /* SearchViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -227,12 +236,15 @@
 			files = (
 				10F52B0F2B39588000DB26D0 /* Stubs.swift in Sources */,
 				10F52B092B39576B00DB26D0 /* LoadingStateView.swift in Sources */,
+				10F52B182B39C41600DB26D0 /* FetchPhase.swift in Sources */,
 				10F52AEC2B39434300DB26D0 /* MainListView.swift in Sources */,
 				10F52B112B395A6300DB26D0 /* QuotesViewModel.swift in Sources */,
 				10F52B0C2B3957C800DB26D0 /* AppViewModel.swift in Sources */,
 				10F52AEA2B39434300DB26D0 /* APIConsumerApp.swift in Sources */,
 				10F52B052B3955A200DB26D0 /* EmptyStateView.swift in Sources */,
+				10F52B1A2B39C49900DB26D0 /* SearchViewModel.swift in Sources */,
 				10F52B132B395AA900DB26D0 /* Utils.swift in Sources */,
+				10F52B1C2B39C56E00DB26D0 /* SearchView.swift in Sources */,
 				10F52B072B39563000DB26D0 /* ErrorStateView.swift in Sources */,
 				10F52AFD2B39449900DB26D0 /* TickerListRowData.swift in Sources */,
 				10F52B162B395B9800DB26D0 /* Quote+Extensions.swift in Sources */,
