@@ -19,8 +19,35 @@ struct SearchView: View {
                                           name: ticker.shortName,
                                           price: quotesVM.priceForTicker(ticker),
                                           type: .search(isSaved: appVM.isAddedToMyTickers(ticker: ticker), onButtonTapped: { appVM.toggleTicker(ticker) })))
+            .contentShape(Rectangle())
+            .onTapGesture { }
+        }
+        .listStyle(.plain)
+        .overlay {
+            listSearchOverLay
         }
     }
+    
+    @ViewBuilder
+    private var listSearchOverLay: some View {
+        switch searchVM.phase {
+        
+        case .fetching:
+            LoadingStateView()
+        
+        case .failure(let error):
+            ErrorStateView(error: error.localizedDescription) { 
+                Task {
+                    await searchVM.searchTickers()
+                }
+            }
+        case .empty:
+            EmptyStateView(text: searchVM.emptyStateListText)
+            
+        default: EmptyView()
+        }
+    }
+    
 }
 
 struct SearchView_Previews: PreviewProvider {
@@ -55,7 +82,7 @@ struct SearchView_Previews: PreviewProvider {
     
     @StateObject static var appVM: AppViewModel = {
         let vm = AppViewModel()
-        vm.tickers = Ticker.stubs
+        vm.tickers = Array(Ticker.stubs.prefix(upTo: 2))
         return vm
     }()
     

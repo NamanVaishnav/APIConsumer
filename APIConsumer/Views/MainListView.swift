@@ -12,6 +12,7 @@ struct MainListView: View {
     
     @EnvironmentObject var appVM:  AppViewModel
     @StateObject var quotesVM = QuotesViewModel()
+    @StateObject var searchVM = SearchViewModel()
     
     var body: some View {
         tickerListView
@@ -23,6 +24,7 @@ struct MainListView: View {
                 titletoolBar
                 attributionToolBar
             }
+            .searchable(text: $searchVM.query)
     }
     
     private var tickerListView: some View {
@@ -45,6 +47,10 @@ struct MainListView: View {
     private var overlayView: some View {
         if appVM.tickers.isEmpty {
             EmptyStateView(text: appVM.emptyTickersText)
+        }
+        
+        if searchVM.isSearching {
+            SearchView(searchVM: searchVM)
         }
     }
     
@@ -84,16 +90,22 @@ struct MainListView: View {
         return vm
     }()
 
-    @StateObject var quotesVM: QuotesViewModel = {
+    var quotesVM: QuotesViewModel = {
         let vm = QuotesViewModel()
         vm.quoteDict = Quote.stubsDict
+        return vm
+    }()
+    
+    var searchVM: SearchViewModel = {
+        let vm = SearchViewModel()
+        vm.phase = .success(Ticker.stubs)
         return vm
     }()
     
     
     return Group {
         NavigationStack {
-            MainListView(quotesVM: quotesVM)
+            MainListView(quotesVM: quotesVM, searchVM : searchVM)
         }
         .environmentObject(appVM)
     }
@@ -106,14 +118,20 @@ struct MainListView: View {
         return vm
     }()
     
-    @StateObject var quotesVM: QuotesViewModel = {
+    var quotesVM: QuotesViewModel = {
         let vm = QuotesViewModel()
         vm.quoteDict = Quote.stubsDict
         return vm
     }()
     
+    var searchVM: SearchViewModel = {
+        let vm = SearchViewModel()
+        vm.phase = .success(Ticker.stubs)
+        return vm
+    }()
+    
     return NavigationStack {
-        MainListView(quotesVM: quotesVM)
+        MainListView(quotesVM: quotesVM ,searchVM: searchVM)
     }
     .environmentObject(emptyAppVM)
     

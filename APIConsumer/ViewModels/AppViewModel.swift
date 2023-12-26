@@ -38,12 +38,21 @@ class AppViewModel: ObservableObject {
         return tickers.first { $0.symbol == ticker.symbol } != nil
     }
     
-    func toggleTicker(ticker: Ticker) {
+    func toggleTicker(_ ticker: Ticker) {
         if isAddedToMyTickers(ticker: ticker) {
-            
+            removeFromMyTickers(ticker: ticker)
         } else {
-            
+            addToMyTickers(ticker: ticker)
         }
+    }
+    
+    private func addToMyTickers(ticker: Ticker) {
+        tickers.append(ticker)
+    }
+    
+    private func removeFromMyTickers(ticker: Ticker) {
+        guard let index = tickers.firstIndex(where: { $0.symbol == ticker.symbol }) else { return }
+        tickers.remove(at: index)
     }
     
     func openYahooFinance() {
