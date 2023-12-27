@@ -13,13 +13,10 @@ import TenttsAPI
 extension Ticker {
     static var stubs: [Ticker] {
         [
-            Ticker(symbol: "AAPL", quoteType: nil, shortName: "Apple Inc.", longName: nil, sector: nil, industry: nil, exchDisp: nil),
-            
-            Ticker(symbol: "TSLA", quoteType: nil, shortName: "Tesla.", longName: nil, sector: nil, industry: nil, exchDisp: nil),
-            
-            Ticker(symbol: "NVDA", quoteType: nil, shortName: "Nvidia Corp.", longName: nil, sector: nil, industry: nil, exchDisp: nil),
-            
-            Ticker(symbol: "AMD", quoteType: nil, shortName: "Advanced Micro Devices", longName: nil, sector: nil, industry: nil, exchDisp: nil),
+            Ticker(symbol: "AAPL", shortname: "Apple Inc."),
+            Ticker(symbol: "TSLA", shortname: "Tesla."),
+            Ticker(symbol: "NVDA", shortname: "Nvidia Corp."),
+            Ticker(symbol: "AMD", shortname: "Advanced Micro Device")
         ]
     }
 }
@@ -27,14 +24,10 @@ extension Ticker {
 extension Quote {
     static var stubs: [Quote] {
         [
-            Quote(currency: nil, marketState: nil, fullExchangeName: nil, displayName: nil, symbol: "AAPL", regularMarketPrice: 150.5, regularMarketChange: -2.31, regularMarketChangePercent: nil, regularMarketChangePreviousClose: nil, postMarketPrice: nil, postMarketPriceChange: nil, regularMarketOpen: nil, regularMarketDayHigh: nil, regularMarketDayLow: nil, regularMarketVolume: nil, trailingPE: nil, marketCap: nil, fiftyTwoWeekLow: nil, fiftyTwoWeekHigh: nil, averageDailyVolume3Month: nil, trailingAnnualDividendYield: nil, epsTrailingTwelveMonths: nil),
-            
-            Quote(currency: nil, marketState: nil, fullExchangeName: nil, displayName: nil, symbol: "TSLA", regularMarketPrice: 250.5, regularMarketChange: 2.31, regularMarketChangePercent: nil, regularMarketChangePreviousClose: nil, postMarketPrice: nil, postMarketPriceChange: nil, regularMarketOpen: nil, regularMarketDayHigh: nil, regularMarketDayLow: nil, regularMarketVolume: nil, trailingPE: nil, marketCap: nil, fiftyTwoWeekLow: nil, fiftyTwoWeekHigh: nil, averageDailyVolume3Month: nil, trailingAnnualDividendYield: nil, epsTrailingTwelveMonths: nil),
-            
-            Quote(currency: nil, marketState: nil, fullExchangeName: nil, displayName: nil, symbol: "NVDA", regularMarketPrice: 100.5, regularMarketChange: -9.31, regularMarketChangePercent: nil, regularMarketChangePreviousClose: nil, postMarketPrice: nil, postMarketPriceChange: nil, regularMarketOpen: nil, regularMarketDayHigh: nil, regularMarketDayLow: nil, regularMarketVolume: nil, trailingPE: nil, marketCap: nil, fiftyTwoWeekLow: nil, fiftyTwoWeekHigh: nil, averageDailyVolume3Month: nil, trailingAnnualDividendYield: nil, epsTrailingTwelveMonths: nil),
-            
-            
-            Quote(currency: nil, marketState: nil, fullExchangeName: nil, displayName: nil, symbol: "AMD", regularMarketPrice: 70.5, regularMarketChange: -2.31, regularMarketChangePercent: nil, regularMarketChangePreviousClose: nil, postMarketPrice: nil, postMarketPriceChange: nil, regularMarketOpen: nil, regularMarketDayHigh: nil, regularMarketDayLow: nil, regularMarketVolume: nil, trailingPE: nil, marketCap: nil, fiftyTwoWeekLow: nil, fiftyTwoWeekHigh: nil, averageDailyVolume3Month: nil, trailingAnnualDividendYield: nil, epsTrailingTwelveMonths: nil),
+            Quote(symbol: "AAPL", regularMarketPrice: 150.43, regularMarketChange: -2.31),
+            Quote(symbol: "TSLA", regularMarketPrice: 250.43, regularMarketChange: 2.89),
+            Quote(symbol: "NVDA", regularMarketPrice: 100.43, regularMarketChange: -19.32),
+            Quote(symbol: "AMD", regularMarketPrice: 70.43, regularMarketChange: 12.55)
             
         ]
     }

@@ -7,30 +7,27 @@
 
 import SwiftUI
 
+@MainActor
 struct TickerListRowView: View {
     
-    
-    
-    let data: TickerListRawData
+    let data: TickerListRowData
     
     var body: some View {
-        HStack(alignment: .center, content: {
+        HStack(alignment: .center) {
             if case let .search(isSaved, onButtonTapped) = data.type {
                 Button {
                     onButtonTapped()
                 } label: {
                     image(isSaved: isSaved)
                 }
-
             }
             
             VStack(alignment: .leading, spacing: 8) {
-                Text(data.symbol)
-                    .font(.headline.bold())
+                Text(data.symbol).font(.headline.bold())
                 if let name = data.name {
                     Text(name)
                         .font(.subheadline)
-                        .foregroundStyle(Color.secondary)
+                        .foregroundColor(Color(uiColor: .secondaryLabel))
                 }
             }
             
@@ -43,8 +40,7 @@ struct TickerListRowView: View {
                 }
                 .font(.headline.bold())
             }
-        })
-        
+        }
     }
     
     @ViewBuilder
@@ -67,40 +63,72 @@ struct TickerListRowView: View {
         if case .main = data.type {
             ZStack(alignment: .trailing) {
                 RoundedRectangle(cornerRadius: 4)
-                    .foregroundStyle(text.hasPrefix("-") ? .red : .green)
+                    .foregroundColor(text.hasPrefix("-") ? .red : .green)
                     .frame(height: 24)
+                
                 Text(text)
-                    .foregroundStyle(Color.white)
+                    .foregroundColor(.white)
                     .font(.caption.bold())
                     .padding(.horizontal, 8)
             }
             .fixedSize()
         } else {
             Text(text)
-                .foregroundStyle(text.hasPrefix("-") ? .red : .green)
+                .foregroundColor(text.hasPrefix("-") ? .red : .green)
         }
+        
+    }
+    
+}
+
+struct TickerListRowView_Previews: PreviewProvider {
+    
+    static var previews: some View {
+        VStack(alignment: .leading) {
+            Text("Main List").font(.largeTitle.bold()).padding()
+            VStack {
+                TickerListRowView(data: appleTikcerListRowData(rowType: .main))
+                Divider()
+                TickerListRowView(data: teslaTikcerListRowData(rowType: .main))
+            }.padding()
+            
+            Text("Search List").font(.largeTitle.bold()).padding()
+            VStack {
+                TickerListRowView(data: appleTikcerListRowData(rowType: .search(isSaved: true, onButtonTapped: {})))
+                Divider()
+                TickerListRowView(data: teslaTikcerListRowData(rowType: .search(isSaved: false, onButtonTapped: {})))
+            }.padding()
+        }.previewLayout(.sizeThatFits)
+    }
+    
+    static func appleTikcerListRowData(rowType: TickerListRowData.RowType) -> TickerListRowData {
+        .init(symbol: "AAPL", name: "Apple Inc.", price: ("100.0", "+0.7"), type: rowType)
+    }
+    
+    static func teslaTikcerListRowData(rowType: TickerListRowData.RowType) -> TickerListRowData {
+        .init(symbol: "TSLA", name: "Tesla", price: ("250.9", "-18.5"), type: rowType)
     }
 }
 
-#Preview ("main plus") {
-    TickerListRowView(data: TickerListRawData(symbol: "AAPL", name: "Apple Inc.", price: ("100.0", "+0.7"), type: .main))
-    
-}
-
-#Preview ("main minus") {
-    TickerListRowView(data: TickerListRawData(symbol: "AAPL", name: "Apple Inc.", price: ("100.0", "-0.7"), type: .main))
-    
-}
-
-#Preview ("Search Saved") {
-    TickerListRowView(data: TickerListRawData(symbol: "AAPL", name: "Apple Inc.", price: ("100.0", "+0.7"), type: .search(isSaved: true, onButtonTapped: {})))
-    
-}
-
-#Preview ("Search Note Saved") {
-    TickerListRowView(data: TickerListRawData(symbol: "AAPL", name: "Apple Inc.", price: ("100.0", "-0.7"), type: .search(isSaved: false, onButtonTapped: {})))
-    
-}
+//#Preview ("main plus") {
+//    TickerListRowView(data: TickerListRawData(symbol: "AAPL", name: "Apple Inc.", price: ("100.0", "+0.7"), type: .main))
+//    
+//}
+//
+//#Preview ("main minus") {
+//    TickerListRowView(data: TickerListRawData(symbol: "AAPL", name: "Apple Inc.", price: ("100.0", "-0.7"), type: .main))
+//    
+//}
+//
+//#Preview ("Search Saved") {
+//    TickerListRowView(data: TickerListRawData(symbol: "AAPL", name: "Apple Inc.", price: ("100.0", "+0.7"), type: .search(isSaved: true, onButtonTapped: {})))
+//    
+//}
+//
+//#Preview ("Search Note Saved") {
+//    TickerListRowView(data: TickerListRawData(symbol: "AAPL", name: "Apple Inc.", price: ("100.0", "-0.7"), type: .search(isSaved: false, onButtonTapped: {})))
+//    
+//}
 
 
 

@@ -34,6 +34,7 @@ class SearchViewModel: ObservableObject {
     init(query: String = "", stocksAPI: NetworkManager = TenttsAPI()) {
         self.query = query
         self.stocksAPI = stocksAPI
+        
         startObserving()
         
     }
@@ -47,10 +48,8 @@ class SearchViewModel: ObservableObject {
             .store(in: &cancellables)
         
         $query
-            .filter{ $0.isEmpty }
-            .sink { [weak self] _ in
-                self?.phase = .initial
-            }
+            .filter { $0.isEmpty }
+            .sink { [weak self] _ in self?.phase = .initial }
             .store(in: &cancellables)
     }
     
@@ -67,7 +66,6 @@ class SearchViewModel: ObservableObject {
             } else {
                 phase = .success(tickers)
             }
-            
         } catch {
             if searchQuery != trimmedQuery { return }
             print(error.localizedDescription)

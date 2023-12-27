@@ -14,6 +14,4 @@ protocol NetworkManager {
     func fetchQuotes(symbols: String) async throws -> [Quote]
 }
 
-extension TenttsAPI: NetworkManager {
-    
-}
+extension TenttsAPI: NetworkManager {}

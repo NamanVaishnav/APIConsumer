@@ -14,8 +14,7 @@ class QuotesViewModel: ObservableObject {
     @Published var quoteDict: [String: Quote] = [:]
     
     func priceForTicker(_ ticker: Ticker) -> PriceChange? {
-        guard let symbol = ticker.symbol,
-                let quote = quoteDict[symbol],
+        guard let quote = quoteDict[ticker.symbol],
               let price = quote.regularPriceText,
               let change = quote.regularDiffText
         else { return nil }

@@ -15,12 +15,23 @@ struct SearchView: View {
     
     var body: some View {
         List(searchVM.tickers) { ticker in
-            TickerListRowView(data: .init(symbol: ticker.symbol ?? "",
-                                          name: ticker.shortName,
-                                          price: quotesVM.priceForTicker(ticker),
-                                          type: .search(isSaved: appVM.isAddedToMyTickers(ticker: ticker), onButtonTapped: { appVM.toggleTicker(ticker) })))
-            .contentShape(Rectangle())
-            .onTapGesture { }
+            TickerListRowView(
+                data: .init(
+                    symbol: ticker.symbol,
+                    name: ticker.shortname,
+                    price: quotesVM.priceForTicker(ticker),
+                    type: .search(
+                        isSaved: appVM.isAddedToMyTickers(ticker: ticker),
+                        onButtonTapped: {
+                            Task { @MainActor in
+                                appVM.toggleTicker(ticker)
+                            }
+                        }
+                    )
+                )
+            )
+//            .contentShape(Rectangle())
+//            .onTapGesture { }
         }
         .listStyle(.plain)
         .overlay {

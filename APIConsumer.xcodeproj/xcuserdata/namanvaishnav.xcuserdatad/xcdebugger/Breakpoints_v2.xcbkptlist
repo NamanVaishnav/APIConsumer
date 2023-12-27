@@ -7,15 +7,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A8EC5612-C069-44AA-8C4D-3DCB44DB2027"
+            uuid = "AF900E61-7DF8-44B3-BE84-09E9B84DB399"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "APIConsumer/Views/SearchView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "listSearchOverLay"
             landmarkType = "24">
          </BreakpointContent>
@@ -23,49 +23,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F08B396A-1E8D-4AA6-BBA7-A881342637DC"
+            uuid = "BF51F9B4-7610-4145-8526-7F18D6C706B6"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "APIConsumer/Views/SearchView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
             landmarkName = "body"
             landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "F08B396A-1E8D-4AA6-BBA7-A881342637DC - 1b360c8593109d01"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "APIConsumer.SearchView.body.getter : some"
-                  moduleName = "APIConsumer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/namanvaishnav/Desktop/APIConsumer/APIConsumer/Views/SearchView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "17"
-                  endingLineNumber = "17"
-                  offsetFromSymbolStart = "544">
-               </Location>
-               <Location
-                  uuid = "F08B396A-1E8D-4AA6-BBA7-A881342637DC - bc59bc060faa3479"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (TenttsAPI.Ticker) -&gt; &lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0 in APIConsumer.SearchView.body.getter : some"
-                  moduleName = "APIConsumer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/namanvaishnav/Desktop/APIConsumer/APIConsumer/Views/SearchView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "256">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

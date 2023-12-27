@@ -15,15 +15,16 @@ struct MainListView: View {
     @StateObject var searchVM = SearchViewModel()
     
     var body: some View {
-        tickerListView
-            .listStyle(.plain)
-            .overlay {
-                overlayView
+        
+
+            tickerListView
+                .listStyle(.plain)
+                .overlay { overlayView }
+                .toolbar {
+                    titletoolBar
+                    attributionToolbar
             }
-            .toolbar {
-                titletoolBar
-                attributionToolBar
-            }
+
             .searchable(text: $searchVM.query)
     }
     
@@ -31,8 +32,8 @@ struct MainListView: View {
         List {
             ForEach(appVM.tickers) { ticker in
                 TickerListRowView(data: .init(
-                    symbol: ticker.symbol ?? "",
-                    name: ticker.shortName,
+                    symbol: ticker.symbol,
+                    name: ticker.shortname,
                     price: quotesVM.priceForTicker(ticker),
                     type: .main))
                 .contentShape(Rectangle())
@@ -65,16 +66,16 @@ struct MainListView: View {
                 .padding(.bottom)
         }
     }
-    private var attributionToolBar: some ToolbarContent {
+    private var attributionToolbar: some ToolbarContent {
         ToolbarItem(placement: .bottomBar) {
             HStack {
-                Button(action: {
+                Button {
                     appVM.openYahooFinance()
-                }, label: {
+                } label: {
                     Text(appVM.attributionText)
                         .font(.caption.weight(.heavy))
-                        .foregroundStyle(Color.secondary)
-                })
+                        .foregroundColor(Color(uiColor: .secondaryLabel))
+                }
                 .buttonStyle(.plain)
                 Spacer()
             }
@@ -82,57 +83,99 @@ struct MainListView: View {
     }
 }
 
-#Preview ("With Tickers") {
-    
-    @StateObject var appVM : AppViewModel = {
+struct MainListView_Previews: PreviewProvider {
+    @StateObject static var appVM : AppViewModel = {
         let vm = AppViewModel()
         vm.tickers = Ticker.stubs
         return vm
     }()
-
-    var quotesVM: QuotesViewModel = {
-        let vm = QuotesViewModel()
-        vm.quoteDict = Quote.stubsDict
-        return vm
-    }()
     
-    var searchVM: SearchViewModel = {
-        let vm = SearchViewModel()
-        vm.phase = .success(Ticker.stubs)
-        return vm
-    }()
-    
-    
-    return Group {
-        NavigationStack {
-            MainListView(quotesVM: quotesVM, searchVM : searchVM)
-        }
-        .environmentObject(appVM)
-    }
-}
-
-#Preview("With Empty Tickers") {
-    @StateObject var emptyAppVM: AppViewModel = {
+    @StateObject static var emptyAppVM: AppViewModel = {
         let vm = AppViewModel()
         vm.tickers = []
         return vm
     }()
     
-    var quotesVM: QuotesViewModel = {
+    static var quotesVM: QuotesViewModel = {
         let vm = QuotesViewModel()
         vm.quoteDict = Quote.stubsDict
         return vm
     }()
     
-    var searchVM: SearchViewModel = {
-        let vm = SearchViewModel()
-        vm.phase = .success(Ticker.stubs)
-        return vm
+    static var searchVM: SearchViewModel = {
+        var mock = MockStocksAPI()
+        mock.stubbedSearchedTickersCallback = { Ticker.stubs }
+        return SearchViewModel(stocksAPI: mock)
     }()
     
-    return NavigationStack {
-        MainListView(quotesVM: quotesVM ,searchVM: searchVM)
+    static var previews: some View {
+        Group {
+            NavigationStack {
+                MainListView(quotesVM: quotesVM, searchVM : searchVM)
+            }
+            .environmentObject(appVM)
+            .previewDisplayName("With Tickers")
+            
+            NavigationStack {
+                MainListView(quotesVM: quotesVM ,searchVM: searchVM)
+            }
+            .environmentObject(emptyAppVM)
+            .previewDisplayName("With Empty Tickers")
+        }
     }
-    .environmentObject(emptyAppVM)
-    
 }
+
+//#Preview ("With Tickers") {
+//    
+//    @StateObject var appVM : AppViewModel = {
+//        let vm = AppViewModel()
+//        vm.tickers = Ticker.stubs
+//        return vm
+//    }()
+//
+//    var quotesVM: QuotesViewModel = {
+//        let vm = QuotesViewModel()
+//        vm.quoteDict = Quote.stubsDict
+//        return vm
+//    }()
+//    
+//    var searchVM: SearchViewModel = {
+//        let vm = SearchViewModel()
+//        vm.phase = .success(Ticker.stubs)
+//        return vm
+//    }()
+//    
+//    
+//    return Group {
+//        NavigationStack {
+//            MainListView(quotesVM: quotesVM, searchVM : searchVM)
+//        }
+//        .environmentObject(appVM)
+//    }
+//}
+//
+//#Preview("With Empty Tickers") {
+//    @StateObject var emptyAppVM: AppViewModel = {
+//        let vm = AppViewModel()
+//        vm.tickers = []
+//        return vm
+//    }()
+//    
+//    var quotesVM: QuotesViewModel = {
+//        let vm = QuotesViewModel()
+//        vm.quoteDict = Quote.stubsDict
+//        return vm
+//    }()
+//    
+//    var searchVM: SearchViewModel = {
+//        let vm = SearchViewModel()
+//        vm.phase = .success(Ticker.stubs)
+//        return vm
+//    }()
+//    
+//    return NavigationStack {
+//        MainListView(quotesVM: quotesVM ,searchVM: searchVM)
+//    }
+//    .environmentObject(emptyAppVM)
+//    
+//}

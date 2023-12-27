@@ -9,7 +9,7 @@ import Foundation
 
 typealias PriceChange = (price: String, change:String)
 
-struct TickerListRawData {
+struct TickerListRowData {
     
     enum RowType {
         case main
@@ -18,6 +18,7 @@ struct TickerListRawData {
     
     let symbol: String
     let name: String?
-    let price : PriceChange?
+    let price: PriceChange?
     let type: RowType
+    
 }

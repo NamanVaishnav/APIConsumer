@@ -14,8 +14,10 @@ struct APIConsumerApp: App {
     
     var body: some Scene {
         WindowGroup {
-            MainListView()
+            NavigationStack {
+                MainListView()
+            }
+            .environmentObject(appVM)
         }
-        .environmentObject(appVM)
     }
 }
