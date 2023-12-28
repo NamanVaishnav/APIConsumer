@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		105DF6622B3D7B420075E6BC /* TickerListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105DF6612B3D7B420075E6BC /* TickerListRepository.swift */; };
+		105DF6642B3D7EC40075E6BC /* MockTickerListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105DF6632B3D7EC40075E6BC /* MockTickerListRepository.swift */; };
 		10F52AEA2B39434300DB26D0 /* APIConsumerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F52AE92B39434300DB26D0 /* APIConsumerApp.swift */; };
 		10F52AEC2B39434300DB26D0 /* MainListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F52AEB2B39434300DB26D0 /* MainListView.swift */; };
 		10F52AEE2B39434400DB26D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10F52AED2B39434400DB26D0 /* Assets.xcassets */; };
@@ -30,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		105DF6612B3D7B420075E6BC /* TickerListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerListRepository.swift; sourceTree = "<group>"; };
+		105DF6632B3D7EC40075E6BC /* MockTickerListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTickerListRepository.swift; sourceTree = "<group>"; };
 		10F52AE62B39434300DB26D0 /* APIConsumer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APIConsumer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10F52AE92B39434300DB26D0 /* APIConsumerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConsumerApp.swift; sourceTree = "<group>"; };
 		10F52AEB2B39434300DB26D0 /* MainListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListView.swift; sourceTree = "<group>"; };
@@ -152,6 +156,7 @@
 			children = (
 				10F52B0E2B39588000DB26D0 /* Stubs.swift */,
 				10F52B202B3AC14000DB26D0 /* MockStocksAPI.swift */,
+				105DF6632B3D7EC40075E6BC /* MockTickerListRepository.swift */,
 			);
 			path = "Mocks&Stubs";
 			sourceTree = "<group>";
@@ -168,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				10F52B1E2B3ABF6D00DB26D0 /* NetworkManager.swift */,
+				105DF6612B3D7B420075E6BC /* TickerListRepository.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -255,12 +261,14 @@
 				10F52B112B395A6300DB26D0 /* QuotesViewModel.swift in Sources */,
 				10F52B0C2B3957C800DB26D0 /* AppViewModel.swift in Sources */,
 				10F52B1F2B3ABF6D00DB26D0 /* NetworkManager.swift in Sources */,
+				105DF6622B3D7B420075E6BC /* TickerListRepository.swift in Sources */,
 				10F52AEA2B39434300DB26D0 /* APIConsumerApp.swift in Sources */,
 				10F52B052B3955A200DB26D0 /* EmptyStateView.swift in Sources */,
 				10F52B1A2B39C49900DB26D0 /* SearchViewModel.swift in Sources */,
 				10F52B132B395AA900DB26D0 /* Utils.swift in Sources */,
 				10F52B1C2B39C56E00DB26D0 /* SearchView.swift in Sources */,
 				10F52B212B3AC14000DB26D0 /* MockStocksAPI.swift in Sources */,
+				105DF6642B3D7EC40075E6BC /* MockTickerListRepository.swift in Sources */,
 				10F52B072B39563000DB26D0 /* ErrorStateView.swift in Sources */,
 				10F52AFD2B39449900DB26D0 /* TickerListRowData.swift in Sources */,
 				10F52B162B395B9800DB26D0 /* Quote+Extensions.swift in Sources */,

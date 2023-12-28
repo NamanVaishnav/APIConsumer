@@ -12,7 +12,11 @@ import SwiftUI
 @MainActor
 class AppViewModel: ObservableObject {
  
-    @Published var tickers: [Ticker] = []
+    @Published var tickers: [Ticker] = [] {
+        didSet {
+            saveTickers()
+        }
+    }
     var titleText = "API Consumer"
     
     @Published var subTitleText: String
@@ -25,8 +29,37 @@ class AppViewModel: ObservableObject {
         return df
     }()
     
-    init(){
+    let tickerListRepository: TickerListRepository
+    
+    
+    init(repository: TickerListRepository = TickerPListRepository()){
+        self.tickerListRepository = repository
         self.subTitleText = subtitleDateFormatter.string(from: Date())
+        loadTickers()
+    }
+    
+    private func loadTickers() {
+        Task { [weak self] in
+            guard let self = self else { return }
+            do {
+                self.tickers = try await tickerListRepository.load()
+            } catch {
+                print(error.localizedDescription)
+                self.tickers = []
+            }
+            
+        }
+    }
+    
+    private func saveTickers() {
+        Task { [weak self] in
+            guard let self = self else { return }
+            do {
+                try await tickerListRepository.save(self.tickers)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
     }
     
     func removeTickers(atOffset offset: IndexSet) {

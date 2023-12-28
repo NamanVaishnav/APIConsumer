@@ -14,26 +14,42 @@
             filePath = "APIConsumer/Views/SearchView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "listSearchOverLay"
             landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "BF51F9B4-7610-4145-8526-7F18D6C706B6"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "APIConsumer/Views/SearchView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "body"
-            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "AF900E61-7DF8-44B3-BE84-09E9B84DB399 - 9911e51ae26f805d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "APIConsumer.SearchView.listSearchOverLay.getter : some"
+                  moduleName = "APIConsumer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/namanvaishnav/Desktop/APIConsumer/APIConsumer/Views/SearchView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "636">
+               </Location>
+               <Location
+                  uuid = "AF900E61-7DF8-44B3-BE84-09E9B84DB399 - f7012d7a3a3968"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in APIConsumer.SearchView.listSearchOverLay.getter : some"
+                  moduleName = "APIConsumer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/namanvaishnav/Desktop/APIConsumer/APIConsumer/Views/SearchView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "84">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
