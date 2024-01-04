@@ -30,6 +30,7 @@ struct SearchView: View {
                     )
                 )
             )
+            // Not needed 
 //            .contentShape(Rectangle())
 //            .onTapGesture { }
         }
